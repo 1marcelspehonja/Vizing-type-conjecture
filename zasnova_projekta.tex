@@ -1,0 +1,40 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{pdfpages}
+\usepackage{fancyhdr,amssymb,amsmath,amsthm,bbm,enumerate,mdwlist,url,multirow,hyperref,graphicx}
+
+\usepackage[slovene]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=60px]{geometry}
+
+
+\begin{document}
+
+\title{Vizing type conjecture for $k$-total rainbow domination number}
+\author{Brina Pirc \& Marcel Špehonja}
+\date{November, 2019}
+\maketitle
+
+\section{Predstavitev problema}
+Ukrajinski matematik Vadim G. Vizing je leta 1963 postavil znano domnevo, da je produkt dominantnih števil grafov G in H kvečjemu manjši od dominantnega števila kartezičnega produkta teh dveh grafov. Medtem ko dokaz te domneve še vedno ostaja eden večjih problemov v teoriji grafov, se bova v svojem projektu spraševala, ali lahko pridemo bližje potrditvi (oz. zavrnitvi) naslednje domneve Vizingovega tipa: 
+
+\textbf{Domneva 4}:  Naj bosta $G$ in $H$ grafa in $k$ $\geq$ $2$. Potem velja: $$\gamma_{krt}(G) \cdot \gamma_{krt}(H) \geq 2 \cdot \gamma_{krt}(G \Box H).$$
+Pri tem je $\gamma_{krt}(G)$ oznaka za totalno dominantno število grafa $G$, kartezično pomnoženega s $K$-polnim grafom, torej $\gamma_{krt}(G)$ $=$ $\gamma_{t}(G \Box K_k)$.
+
+\section{Definicije}
+
+\underline{\textsc{Dominantna množica}}: dominantna množica grafa $G = (V,E)$ je podmnožica vozlišč $D \subset V$, za katero velja, da ima vsako vozlišče $v$ iz $V \textbackslash D$ vsaj enega soseda, ki je element $D$.
+\underline{\textsc{Dominantno število}}: dominantno število grafa $G$ je število vozlišč v najmanjši dominantni množici dominantne množice. \\
+\underline{\textsc{Totalno dominantno število}}: je enako dominantnemu številu, z izjemo tega, da morajo imeti elementi v totalni dominantni množici prav tako povezavo z enim iz te množice. Torej prav vsako vozlišče grafa G, brez izjeme, mora imeti soseda v totalni dominantni množici (da je sam del te množice ne zadostuje). \\
+\underline{\textsc{Kartezijski produkt}}: grafov $G = (V, E)$ in $H = (V^{\prime}, E^{\prime})$ je graf $G \Box H$ z naborom vozlišč $V \times V^{\prime}$ ter povezavami med $(v, v^{\prime})$ in $(u, u^{\prime})$, če je obstajala povezava med $v$ in $u$ ali med $v^{\prime}$ in $u^{\prime}$. \\
+\underline{\textsc{Total $k$-rainbow domination number}}: je totalno dominantno število grafa $G$, kartezijsko pomnoženega z grafom $K_k$, kar je oznaka za $k$-poln graf. \\
+\underline{\textsc{$k$-poln graf}}: graf na $k$ vozliščih, za vsako vozlišče pa velja, da je povezano z vsemi ostalimi vozlišči. To pomeni, da ima $K_k$ graf $k$ vozlišč in $k (k-1)/2$ povezav.
+\newpage
+
+\section{Cilj}
+
+Najin glavni cilj je najti taka grafa $G$ in $H$, da naša $Domneva \, 4$ ne bo veljala. Seveda je to težek problem, zato bova sprva opazovala, kaj se dogaja pri manjših grafih $G$ in $H$. Postopoma bova povečevala število vozlišč. Pri manjših grafih bova skušala preizkusiti vse možnosti, pri večjih grafih pa bova s pomočjo hevristike dodajala nove povezave in sistematično raziskovala izide. Zraven bova počasi povečevala tudi $k$. Na tak način bova želela ovreči $Domnevo \, 4$.
+Poleg tega pa se bova posvetila tudi obravnavanju konstante, ki je v naši domnevi enaka 2. Zanimalo naju bo, ali se lahko s povečevanjem k število 2 morda zmanjša (oz. celo poveča) in katera je ta vrednost, s katero bi nadomestili 2.
+Zadnji del poskusa, ki bo zajet skupaj s preostalima dvema, bo iskanje takega $k$ za $k$-poln graf, da bo veljala enakost med levo in desno stranjo domneve.
+
+\end{document}
