@@ -53,18 +53,18 @@ Za opravljanje projekta sva uporabljala programski jezik $Sage$ na platformi $Co
 
 \section{Testiranje}
 \subsection{Vsi grafi do 5 vozlišč}
-Najprej sva generirala vse povezane grafe od 2 do 5 vozlišč, ki je 30. Nato sva vzela vse možne kombinacije parov teh grafov, torej $\binom{30}{2}=435$, ter vse te kombinacije vstavila v najino funkcijo, ki vrne iskan koeficient $c$. Dane rezultate sva nato vstavila v novi funkciji, ki sta poiskali maksimum in minimum izračunanih $c$-jev, ter izpisali pare grafov pri katerih je prišlo do teh ekstremov. \\
+Najprej sva generirala vse povezane grafe od 2 do 5 vozlišč, ki jih je 30. Nato sva vzela vse možne kombinacije parov teh grafov, torej $\binom{31}{2}=465$, ter vse te kombinacije vstavila v najino funkcijo, ki vrne iskan koeficient $c$. Dane rezultate sva nato vstavila v novi funkciji, ki sta poiskali maksimum in minimum izračunanih $c$-jev, ter izpisali pare grafov pri katerih je prišlo do teh ekstremov. \\
 Pri prvem poskusu je bil $k=2$: Maximum iskanih koeficientov $c$ je bil enak 2, število parov pri katerih je prišlo do maksimuma pa je bilo kar 10. Torej je pri desetih različnih parih grafov prišlo do enakosti domneve $\gamma_{krt}(G) \cdot \gamma_{krt}(H) = 2 \cdot \gamma_{krt}(G \Box H)$. Minimum koeficienta $c$ je bil 2/5. \\
 $k=3$:  Maximum $c$-ja je bil sedaj 5/3, kar je manj od 2, število parov pri katerih je prišlo do maksimuma pa 6. To nakazuje na domnevo da, ko povečujemo število $k$ se koeficient $c$ manjša. Minimum koeficienta $c$ je bil 9/13. \\
 $k=4$: Maximum $c$-ja se je ponovno zmanjšal pri $k=4$ , saj je 20/13, kar je manj od 5/3. Minimum koeficienta $c$ pa je 1.
 Zaenkrat bi lahko sklepali, da ko povečujemo $k$, se maximum koeficienta $c$ manjša, minimum pa veča. Da bi to potrdili moramo testirati še grafe z več vozlišči. \\
 
 \subsection{Dvodelni grafi}
-Podobno, kot pri prejšnjem primeru sva generirala grafe, tokrat dvodelne povezane do 6 vozlišč. Teh je 27, torej vseh možnih kombinacij parov je $\binom{27}{2}=351$. Tudi ta primer potrdi naše sklepanje, da se maksimum $c$-ja zmanjša, minimum pa poveča, ob večanju $k$-ja, saj smo pri $k=2$ dobili max(c)=2, min(c)=1/3, pri $k=3$ smo dobili max(c)=5/3, min(c)=9/16, pri $k=4$ pa max(c)=30/19, min(c)=4/5. \\
+Podobno, kot pri prejšnjem primeru sva generirala grafe, tokrat dvodelne povezane do 6 vozlišč. Teh je 27, torej vseh možnih kombinacij parov je $\binom{28}{2}=378$. Tudi ta primer potrdi naše sklepanje, da se maksimum $c$-ja zmanjša, minimum pa poveča, ob večanju $k$-ja, saj smo pri $k=2$ dobili max(c)=2, min(c)=1/3, pri $k=3$ smo dobili max(c)=5/3, min(c)=9/16, pri $k=4$ pa max(c)=30/19, min(c)=4/5. \\
 Vidimo pri maksimum velja : $2>5/3>30/19$, se manjša, \\
 pri minimum pa: $1/3<9/16<4/5$, se veča. \\
 Tudi število parov, ki dosežejo maksimum se zmanjša, saj je pri $k=2$ maksimum doseglo 15 različnih parov, pri $k=3$, 10 različnih, pri $k=4$ pa le 2 različna para. \\
-Vzela sva tudi dvodelne grafe do 7 vozlišč (71 možnih), kjer sva pri generiranju parov odvzela tiste, ki so bili že obravnavani v prejšnjem primeru (kombinacij je torej $\binom{71}{2} - 351=2134$). Dobili smo sledeče: \\
+Vzela sva tudi dvodelne grafe do 7 vozlišč (71 možnih), kjer sva pri generiranju parov odvzela tiste, ki so bili že obravnavani v prejšnjem primeru (kombinacij je torej $\binom{72}{2} - 378=2178$). Dobili smo sledeče: \\
 $k=2$:  max(c) = 2 , min(c) = 2/7 \\
 $k=3$:  max(c)= 12/7,  min(c)=9/19 \\
 Ponovno rezultati potrjujejo našo domnevo.
