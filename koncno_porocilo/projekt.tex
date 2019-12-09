@@ -923,8 +923,349 @@ Sprva sva opazovala vse kartezijske produkte poti na $i$ vozliščih (kar je zna
 Ugotovila sva, da če sta $n$ in $k$ dovolj velika, bo $k$-totalno dominantno število enako $n$. To velja za $k \geq 4$ in $n \geq 2$. To pomeni, da je pri takih kartezijskih produktih število obarvanih vozlišč enako številu vozlišč poti. To je jasno iz skice takega grafa. Tudi pri 3-polnem grafu dobimo vzorec $k$-totalnega dominantnega števila za pot, in sicer so rezulati sledeči: $[2,2,$ $3,4,5,6,$ $6,7,8,9,10,$ $10,11,12,13,14,$ $14, ...]$, torej bo zmnožek $3-rt$ števil grafov $n$ in $m$ poti v primerjavi s $k \geq 4$ padal, ko sta $n$ in $m$ vedno večja (v smislu da je pri $n=7$ in $m=3$ v prvem primeru $3 \cdot 7=21$, pri $k=3$ pa $3 \cdot 6=18$). Pri $k=2$ pa je $2-rt$ število enako $[2,2,2,$ $4,4,4,$ $6,6,6,$ $...]$, kjer je indeks v seznamu enak številu vozlišč poti (prvi element ima indeks 1). Tu je zmnožek še manjši (za $n=7$, $m=3$ dobimo $2 \cdot 6=12$). To je tudi smiselno, saj večji kot je graf, večje število vozlišč bo v dominantni množici. Pri dotičnem primeru, torej 3-poti, 7-poti in $k$ iz (2, 3, 4), $c$ z naraščanjem $k$ pada.\\
 Problem, s katerim sva se soočala vseskozi projekt, je bil zahtevnost računanja $k$-totalnih dominantnih števil. Za manjše grafe in manjše $k$, kar je pri poteh pomenilo do 10 vozlišč, sva si pri računanju »grafa« (kot se je imenovala funkcija, ki je vračala najin $c$) pomagala le s for zanko. Za splošne grafe pa sva za boljšo raziskovo uporabljala metodo simulated annealing. Za $k=3$ je bilo že 9 vozlišč na meji zmogljivosti, saj je program po 7 urah računanja vrnil največ (7,8) in (6,9), torej ne pa kaj se zgodi, če opazujemo $8\times8$, $7\times9$, $8\times9$ in $9\times9$ poti. \\
 
+$k=2$, maksimalni $c=2$ pri poteh na 4 vozliščih:\\
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{4-pot}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{4-pot}
+\end{subfigure}
+\caption{Poti na 4 vozliščih}
+\label{fig:test}
+\end{figure}
+
+\end{center}
+
+$k=3$, maksimalni $c=20/13$ pri poti na 4 in 5 vozliščih:\\
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{4-pot}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{5-pot}
+\end{subfigure}
+\caption{Poti na 4 in 5 vozliščih}
+\label{fig:test}
+\end{figure}
+
+\end{center}
+
+$k=4$, maksimalni $c=4/3$ pri poteh na 6 vozliščih:\\
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{6-pot}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{6-pot}
+\end{subfigure}
+\caption{Poti na 6 vozliščih}
+\label{fig:test}
+\end{figure}
+
+$k=5$, maksimalni $c=15/13$ pri poteh na 3 in 5 vozliščih:\\
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{3-pot}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{5-pot}
+\end{subfigure}
+\caption{Poti na 3 in 5 vozliščih}
+\label{fig:test}
+\end{figure}
+
+\end{center}
+
 \subsection{Drevesa}
 Najprej sva naredila seznam neizomorfnih dreves. Takšnih dreves na do 10 vozliščih je 201. Ker so bile že pri poteh na 12 vozliščih in $k=2$ težave, sva tu pričakovala še počasnejše računanje. Pri $k=2$ je bil največji $c=2$. Skušala sva računati le za drevesa na 9 vozliščih, vendar jih je izračunal zelo malo, največ $T[48]$, $T[201]$. Pri $k=3$ je izračunal največ drevesa na do 7 vozlišč, $c=35/22$; pri $k=4$ je $c=4/3$ (vozlišča do 5); $k=5$, $c=5/4$ (do 5 vozlišč). \\
+
+$k=2$, maksimalni $c=2$ pri 10 različnih parih:\\
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-3}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-3}
+\end{subfigure}
+\caption{Prvi par: drevesi na 4 vozliščih (grafa sta poti in sta se pojavila že pri poglavju poti)}
+\label{fig:test}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-3}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-11}
+\end{subfigure}
+\caption{Drugi par: drevesi na 4 in 6 vozliščih}
+\label{fig:test}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-3}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-30}
+\end{subfigure}
+\caption{Tretji par: drevesi na 4 in 8 vozliščih}
+\label{fig:test}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-3}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-44}
+\end{subfigure}
+\caption{Četrti par: drevesi na 4 in 8 vozliščih}
+\label{fig:test}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-11}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-11}
+\end{subfigure}
+\caption{Peti par: drevesi na 6 vozliščih}
+\label{fig:test}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-11}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-30}
+\end{subfigure}
+\caption{Šesti par: drevesi na 6 in 8 vozliščih}
+\label{fig:test}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-11}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-44}
+\end{subfigure}
+\caption{Sedmi par: drevesi na 6 in 8 vozliščih}
+\label{fig:test}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-30}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-30}
+\end{subfigure}
+\caption{Osmi par: drevesi na 8 vozliščih}
+\label{fig:test}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-30}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-44}
+\end{subfigure}
+\caption{Deveti par: drevesi na 8 vozliščih}
+\label{fig:test}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-44}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-44}
+\end{subfigure}
+\caption{Deseti par: drevesi na 8 vozliščih}
+\label{fig:test}
+\end{figure}
+\end{center}
+
+
+$k=3$, maksimalni $c=35/22$:\\
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-5}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-22}
+\end{subfigure}
+\caption{Drevesi na 5 in 7 vozliščih}
+\label{fig:test}
+\end{figure}
+\end{center}
+
+
+$k=4$, maksimalni $c=4/3$ pri 3 parih:\\
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-3}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-4}
+\end{subfigure}
+\caption{Prvi par: drevesi na 4 vozliščih}
+\label{fig:test}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-4}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-4}
+\end{subfigure}
+\caption{Drugi par: drevesi na 4 vozliščih}
+\label{fig:test}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-4}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-6}
+\end{subfigure}
+\caption{Tretji par: drevesi na 4 in 5 vozliščih}
+\label{fig:test}
+\end{figure}
+\end{center}
+
+
+$k=5$, maksimalni $c=5/4$ pri 2 parih:\\
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-6}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-7}
+\end{subfigure}
+\caption{Prvi par: drevesi na 5 vozliščih}
+\label{fig:test}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.4\linewidth]{t-7}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{t-7}
+\end{subfigure}
+\caption{Prvi par: drevesi na 5 vozliščih}
+\label{fig:test}
+\end{figure}
+\end{center}
+
 \pagebreak
 
 \subsection{Simulated annealing}
